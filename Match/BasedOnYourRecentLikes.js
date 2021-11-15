@@ -1,9 +1,9 @@
-let minAge = 18;
-let maxAge = 37;
-let numberOfProfiles = 10;
+let minAge = parseInt(18);
+let maxAge = parseInt(37);
+let numberOfProfiles = parseInt(10);
 
 let ageCity = document.getElementsByClassName("profile-infos__age-city")[0].textContent;
-let age = ageCity.substring(0,2);
+let age = parseInt(ageCity.substring(0,2));
 
 if(age < minAge && age > maxAge) {
 document.getElementsByClassName("shuffle-card__interaction shuffle-card__interaction--no")[0].click();
@@ -39,4 +39,3 @@ for(let i = 0; i < element.length; i++) {
         }
     }
    }
-
