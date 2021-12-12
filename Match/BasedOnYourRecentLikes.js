@@ -1,6 +1,7 @@
 let minAge = parseInt(18);
 let maxAge = parseInt(38);
 let bigLoop;
+let breakBigLoop = 0;
 
 for( bigLoop=0; bigLoop<3; bigLoop++) {
 let ageCity = document.getElementsByClassName("profile-infos__age-city")[0].textContent;
@@ -43,10 +44,13 @@ for(let elementLoop = 0; elementLoop < element.length; elementLoop++) {
             }
              }
     else {
-
+        breakBigLoop = 1;
         console.log("kan vara intressant");
         break;
     }
     }
+   }
+   if (breakBigLoop > 0){
+   break;
    }
 }
