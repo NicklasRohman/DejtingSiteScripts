@@ -9,43 +9,41 @@ let age = parseInt(ageCity.substring(0,2));
 if(age < minAge && age > maxAge) {
 document.getElementsByClassName("shuffle-card__interaction shuffle-card__interaction--no")[0].click();
 }
-else if (document.getElementsByClassName("sc-fyGvY") {
-document.getElementsByClassName("sc-fyGvY fSqUWE")[0].click();
-}
 else {
 var element = document.getElementsByClassName("ProfileFullDealbreakers__DealbreakersList-sc-l04px0-0");
 
 let onlyFirstProfile = 0;
 const profileValues = [];
-let elementLoop;
 
-for(elementLoop = 0; elementLoop < element.length; elementLoop++) {
+for(let elementLoop = 0; elementLoop < element.length; elementLoop++) {
 
     if(element[elementLoop].textContent.includes(" km")) {
         onlyFirstProfile++;
         }
 
     if(onlyFirstProfile > 1) {
-
+            break;
     }
         profileValues[elementLoop] = element[elementLoop].textContent;
 }
 
-let profileLoop;
+    for(let profileLoop = 0; profileLoop < profileValues.length; profileLoop++) {
 
-    for(profileLoop = 0; profileLoop < profileValues.length; profileLoop++) {
-
-       console.log("profile values: " + profileValues);
-    if (profileValues[profileLoop].includes("Har barn")) {
+    if ( profileValues[profileLoop].includes("Röker regelbundet")   ||
+      profileValues[profileLoop].includes("Kanske")                 ||
+      profileValues[profileLoop].includes("Vill inte ha barn") ) {
+                document.getElementsByClassName("shuffle-card__interaction shuffle-card__interaction--no")[0].click();
+            }
+    else if (profileValues[profileLoop].includes("Har barn")) {
+            if(profileValues[profileLoop].includes("Vill inte ha barn")) {
+                console.log("kan vara intressant men har barn");
+            } else {
             document.getElementsByClassName("shuffle-card__interaction shuffle-card__interaction--no")[0].click();
+
+            }
              }
-    else if ( profileValues[profileLoop].includes("Vill inte ha barn")) {
-            document.getElementsByClassName("shuffle-card__interaction shuffle-card__interaction--no")[0].click();
-    }
-    else if ( profileValues[profileLoop].includes("Kanske")) {
-            document.getElementsByClassName("shuffle-card__interaction shuffle-card__interaction--no")[0].click();
-        }
     else {
+
         console.log("kan vara intressant");
         break;
     }
