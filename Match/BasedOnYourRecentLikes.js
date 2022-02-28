@@ -1,9 +1,7 @@
 let minAge = parseInt(18);
 let maxAge = parseInt(38);
 
-
-
-    let ageCity = document.getElementsByClassName("profile-infos__age-city")[i].textContent;
+    let ageCity = document.getElementsByClassName("profile-infos__age-city")[0].textContent;
     let age = parseInt(ageCity.substring(0,2));
 
     if(age < minAge && age > maxAge)
