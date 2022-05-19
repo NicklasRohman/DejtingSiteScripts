@@ -33,9 +33,8 @@ let maxAge = parseInt(38);
         for(let profileLoop = 0; profileLoop < profileValues.length; profileLoop++)
         {
             if ( profileValues[profileLoop].includes("Röker regelbundet")   ||
-                profileValues[profileLoop].includes("Kanske")               ||
                 profileValues[profileLoop].includes("Vill inte ha barn")    ||
-                profileValues[profileLoop].includes("Har barn")
+                (profileValues[profileLoop].includes("Har barn") && profileValues[profileLoop].includes("Kanske"))
                 )
                 {
                     document.getElementsByClassName("shuffle-card__interaction shuffle-card__interaction--no")[0].click();
